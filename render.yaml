@@ -1,0 +1,18 @@
+# Render free-tier deploy for Free For Thee.
+# The SQLite database needs a persistent disk, or posts vanish on every restart.
+services:
+  - type: web
+    name: free-for-thee
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /app/data
+    disk:
+      name: free-for-thee-data
+      mountPath: /app/data
+      sizeGB: 1

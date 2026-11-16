@@ -1,0 +1,1 @@
+{"dependencies":{"express":"^4.21.2"},"description":"Free For Thee — a free neighbor board for Athens, GA. Neighbors post what they need, anyone replies. No accounts, no paywall.","engines":{"node":">=22"},"license":"MIT","main":"server.js","name":"free-for-thee","private":true,"scripts":{"start":"node server.js"},"type":"commonjs","version":"1.0.0"}
