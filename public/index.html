@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free For Thee — Athens Neighbors Helping Neighbors</title>
+<meta name="description" content="A free neighbor board for Athens, GA. Post what you need, offer what you can do. No fees, no ads, no accounts.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>🌳 Free For Thee</h1>
+  <p class="tagline">Neighbors helping neighbors in Athens, GA.<br>
+  Post what you need. Offer what you can do. <strong>Free forever — no fees, no ads, no accounts.</strong></p>
+</header>
+
+<main>
+  <section class="composer" aria-label="Post something">
+    <h2>Post something</h2>
+    <p class="hint">Tap the mic and just talk — it fills in the post for you. Or type it yourself.</p>
+    <form id="post-form">
+      <div class="mic-row">
+        <button type="button" id="mic-btn" class="mic-btn" aria-label="Speak your post">🎤 Speak it</button>
+        <span id="mic-status" class="mic-status" aria-live="polite"></span>
+      </div>
+      <label>Title
+        <input id="f-title" type="text" maxlength="140" placeholder="e.g. Need help moving a couch Saturday" required>
+      </label>
+      <div class="field-row">
+        <label>Type
+          <select id="f-type">
+            <option value="need">Need Help</option>
+            <option value="offer">I Can Help</option>
+            <option value="free">Free or For Sale</option>
+            <option value="recommend">Recommendations</option>
+            <option value="note">Neighbor Notes</option>
+          </select>
+        </label>
+        <label>Area / neighborhood
+          <input id="f-area" type="text" maxlength="80" placeholder="e.g. Five Points">
+        </label>
+      </div>
+      <div class="field-row">
+        <label>Pay
+          <input id="f-pay" type="text" maxlength="40" placeholder="Free, or $ amount">
+        </label>
+        <label>Urgency
+          <select id="f-urgency">
+            <option value="">—</option>
+            <option value="Urgent">Urgent</option>
+            <option value="Soon">Soon</option>
+            <option value="Flexible">Flexible</option>
+          </select>
+        </label>
+        <label>Your name (optional)
+          <input id="f-author" type="text" maxlength="60" placeholder="Neighbor">
+        </label>
+      </div>
+      <label>Details
+        <textarea id="f-desc" rows="3" maxlength="2000" placeholder="What do you need, or what can you do? When, where, anything people should know."></textarea>
+      </label>
+      <button type="submit" class="primary-btn">Post it — free</button>
+      <p id="form-error" class="error" role="alert" hidden></p>
+    </form>
+  </section>
+
+  <section class="board" aria-label="Neighbor board">
+    <div class="filters" role="group" aria-label="Filter posts">
+      <button class="chip active" data-filter="all">All posts</button>
+      <button class="chip" data-filter="matches">✨ Matches for you</button>
+      <button class="chip" data-filter="need">Need Help</button>
+      <button class="chip" data-filter="offer">I Can Help</button>
+      <button class="chip" data-filter="free">Free or For Sale</button>
+      <button class="chip" data-filter="recommend">Recommendations</button>
+      <button class="chip" data-filter="note">Neighbor Notes</button>
+      <label class="show-closed"><input type="checkbox" id="show-closed"> Show resolved</label>
+    </div>
+    <p id="board-status" class="board-status" aria-live="polite">Loading posts…</p>
+    <ul id="post-list" class="post-list"></ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Made by a local neighbor who works with his hands.<br>
+  Free For Thee is free for everybody — no fees, no ads, no selling your info. Be kind, be safe, meet in public when you can.</p>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
