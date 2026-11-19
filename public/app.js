@@ -209,7 +209,7 @@ form.addEventListener('submit', async ev => {
 });
 
 /* ---------- voice-to-post ---------- */
-const AREAS = ['downtown','five points','normaltown','eastside','westside','beechwood','alps','boulevard','river mist','cedar creek','lakewood','green acres','pinewood','chase street','prince avenue','milledge','oconee','winterville','bogart','watkinsville','hull','east athens','north athens'];
+const AREAS = ['downtown','uptown','eastside','westside','northside','southside','midtown'];
 const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 function parseSpoken(text) {
